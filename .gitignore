@@ -1,0 +1,52 @@
+# ----------------------------
+# Terraform
+# ----------------------------
+
+# Archivos locales de estado
+*.tfstate
+*.tfstate.*
+terraform.tfstate
+terraform.tfstate.backup
+crash.log
+
+# Archivos de variables sensibles
+*.tfvars
+*.tfvars.json
+*.auto.tfvars
+
+# Carpetas locales de Terraform
+.terraform/
+.terraform.lock.hcl
+
+# Salidas de plan
+*.tfplan
+plan.out
+
+# Archivos de override (personalización local)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ----------------------------
+# Archivos del sistema
+# ----------------------------
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.Trash-*
+.nfs*
+
+# ----------------------------
+# IDEs y editores
+# ----------------------------
+
+# Visual Studio Code
+.vscode/
