@@ -1,0 +1,35 @@
+substitutions:
+  _SERVICE_NAME: "my-cloudrun-service"
+  _REGION: "us-central1"
+  _REPOSITORY: "my-repo" 
+  _IMAGE_TAG: "$SHORT_SHA"
+
+steps:
+# 1. Build container and push to Artifact Registry
+- name: "gcr.io/cloud-builders/docker"
+  entrypoint: "bash"
+  args:
+    - "-c"
+    - |
+      set -e
+      IMAGE="us-central1-docker.pkg.dev/$PROJECT_ID/$_REPOSITORY/${_SERVICE_NAME}:${_IMAGE_TAG}"
+      docker build -t $IMAGE .
+      docker push $IMAGE
+  env:
+    - "DOCKER_BUILDKIT=1"
+
+# 2. Deploy to Cloud Run
+- name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  entrypoint: "bash"
+  args:
+    - "-c"
+    - |
+      set -e
+      IMAGE="us-central1-docker.pkg.dev/$PROJECT_ID/$_REPOSITORY/${_SERVICE_NAME}:${_IMAGE_TAG}"
+      gcloud run deploy ${_SERVICE_NAME} \
+        --image=${IMAGE} \
+        --region=$_REGION \
+        --platform=managed \
+        --allow-unauthenticated=false \
+        --no-allow-unauthenticated \
+        --set-env-vars=ENV=prod
