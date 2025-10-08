@@ -7,5 +7,5 @@ variable "security_policy_name" {
 variable "blocked_ip" {
   description = "Dirección IP a bloquear"
   type        = string
-  default     = "1.2.3.4"
+  default     = "192.168.0.1"
 }
