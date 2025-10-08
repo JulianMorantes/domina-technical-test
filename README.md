@@ -93,14 +93,15 @@ gcloud compute ssh test-instance --zone=us-central1-a
    ```
 
 ## Entregables : 
-    1. URL IP : http://34.121.61.59/
+    1. URL IP : http://35.222.165.90
 ---
 
 ## Evidencias 
 
 ![Construccion efectiva de IAC ](https://res.cloudinary.com/dnrj7cbj6/image/upload/v1759841884/Captura_de_pantalla_2025-10-07_a_la_s_7.57.06_a.m._ayq3ry.png)
 
-
 ![ejecucion de terraform IAC ](https://res.cloudinary.com/dnrj7cbj6/image/upload/v1759842085/Captura_de_pantalla_2025-10-07_a_la_s_8.01.19_a.m._swve9t.png)
+
+![ejecucion de terraform IAC ](https://res.cloudinary.com/dnrj7cbj6/image/upload/v1759935473/Captura_de_pantalla_2025-10-08_a_la_s_9.53.41_a.m._vkptrj.png)
 
 ![Conexion SSH y Implementacion de Ngix ](https://res.cloudinary.com/dnrj7cbj6/image/upload/v1759841884/Captura_de_pantalla_2025-10-07_a_la_s_7.22.06_a.m._vbaobk.png)

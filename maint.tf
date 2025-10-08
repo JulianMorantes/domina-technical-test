@@ -40,3 +40,10 @@ module "compute" {
   subnet_name   = module.network.subnet_name
   tags          = ["web-server"]
 }
+
+# Módulo de seguridad
+module "security" {
+  source                = "./modules/security"
+  security_policy_name  = "block-ip-policy"
+  blocked_ip            = "1.2.3.4"
+}
